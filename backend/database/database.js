@@ -1,3 +1,3 @@
 module.exports = {
-  database: 'mongodb://localhost:27017/moviepersons'
+  database: 'mongodb://leoreyesdev:Maximus_2017@ds035607.mlab.com:35607/moviepersons'
 };

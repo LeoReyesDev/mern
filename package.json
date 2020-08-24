@@ -1,5 +1,6 @@
 {
   "name": "react-mernstack-crud",
+  "homepage":"https://leoreyesdev.com/labs/mern-crud/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
