@@ -10,7 +10,7 @@ const movieRoute = require('../backend/routes/movie.route')
 
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise;
-mongoose.connect(dbConfig.database, {
+mongoose.connect(process.env.MONGODB_URI || dbConfig.database, {
   useNewUrlParser: true
 }).then(() => {
   console.log('Database sucessfully connected!')
@@ -31,7 +31,7 @@ app.use('/movies', movieRoute)
 
 
 // PORT
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
 })
@@ -46,3 +46,7 @@ app.use(function (err, req, res, next) {
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 });
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('/build'))
+}

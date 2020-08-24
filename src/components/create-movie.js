@@ -62,7 +62,7 @@ export default class CreateMovie extends Component {
       producers: this.state.producers
     };
 
-    axios.post('http://localhost:4000/movies/create-movie', movieObject)
+    axios.post('http://localhost:8080/movies/create-movie', movieObject)
       .then(res => console.log("DATAOBJECT", res.data));
 
     console.log("DATJSON", movieObject)

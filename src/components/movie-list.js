@@ -13,7 +13,7 @@ export default class PersonList extends Component {
   }
 
   componentWillMount() {
-    axios.get('http://localhost:4000/movies/')
+    axios.get('http://localhost:3000/movies/')
       .then(res => {
         this.setState({
           movies: res.data

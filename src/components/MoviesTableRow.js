@@ -11,7 +11,7 @@ const PersonsTableRow = (props) => {
     const [register, setRegister] = useState({})
 
     const deleteMovie = () => {
-        axios.delete('http://localhost:4000/movies/delete-movie/' + props.obj._id)
+        axios.delete('http://localhost:8080/movies/delete-movie/' + props.obj._id)
             .then((res) => {
                 console.log('Movie has been deleted!')
                 getId()
