@@ -67,7 +67,7 @@ export default class CreatePerson extends Component {
       roleProducer: this.state.roleProducer
     };
 
-    axios.post('http://localhost:4000/persons/create-person', personObject)
+    axios.post('http://localhost:8080/persons/create-person', personObject)
       .then(res => console.log("DATAOBJECT", res.data));
 
     console.log("DATJSON", personObject)

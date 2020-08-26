@@ -5,8 +5,8 @@ let bodyParser = require('body-parser');
 let dbConfig = require('./database/database');
 
 // Express Route
-const personRoute = require('../backend/routes/person.route')
-const movieRoute = require('../backend/routes/movie.route')
+const personRoute = require('./routes/person.route')
+const movieRoute = require('./routes/movie.route')
 
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise;
@@ -46,3 +46,10 @@ app.use(function (err, req, res, next) {
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join('build', 'index.html'));
+  });
+}
