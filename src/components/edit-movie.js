@@ -29,7 +29,7 @@ export default class EditMovie extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/movies/edit-movie/' + this.props.match.params.id)
+    axios.get('http://localhost:4000/movies/edit-movie/' + this.props.match.params.id)
       .then(res => {
         this.setState({
           title: this.state.title,
@@ -75,7 +75,7 @@ export default class EditMovie extends Component {
       producers: this.state.producers
     };
 
-    axios.put('http://localhost:8080/movies/update-movie/' + this.props.match.params.id, movieObject)
+    axios.put('http://localhost:4000/movies/update-movie/' + this.props.match.params.id, movieObject)
       .then((res) => {
         console.log(res.data)
         this.setState({

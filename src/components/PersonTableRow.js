@@ -9,7 +9,7 @@ const PersonsTableRow = (props) => {
     const [register, setRegister] = useState({})
 
     const deletePerson = () => {
-        axios.delete('http://localhost:8080/persons/delete-person/' + props.obj._id)
+        axios.delete('http://localhost:4000/persons/delete-person/' + props.obj._id)
             .then((res) => {
                 console.log('Student successfully deleted!')
                 getId()

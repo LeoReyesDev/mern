@@ -30,7 +30,7 @@ export default class EditPerson extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/persons/edit-person/' + this.props.match.params.id)
+    axios.get('http://localhost:4000/persons/edit-person/' + this.props.match.params.id)
       .then(res => {
         this.setState({
           lastName: this.state.lastName,
@@ -82,7 +82,7 @@ export default class EditPerson extends Component {
       roleProducer: this.state.roleProducer
     };
 
-    axios.put('http://localhost:8080/persons/update-person/' + this.props.match.params.id, personObject)
+    axios.put('http://localhost:4000/persons/update-person/' + this.props.match.params.id, personObject)
       .then((res) => {
         console.log(res.data)
         this.setState({
