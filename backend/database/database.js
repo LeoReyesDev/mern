@@ -1,3 +1,6 @@
 module.exports = {
-  database: 'mongodb://usermovie:Maximus_2017@ds035607.mlab.com:35607/moviepersons'
+  database:
+    "mongodb+srv://LeoReyesDev:Q0vOhFAaEWa5mA2f@cluster0.47kpx.mongodb.net/moviepersons?retryWrites=true&w=majority",
 };
+
+//Q0vOhFAaEWa5mA2f
