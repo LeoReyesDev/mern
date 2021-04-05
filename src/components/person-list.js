@@ -1,27 +1,27 @@
-import React, { Component, useState, useEffect } from "react";
-import axios from 'axios';
-import Table from 'react-bootstrap/Table';
-import PersonTableRow from './PersonTableRow';
+import React, { Component } from "react";
+import axios from "axios";
+import Table from "react-bootstrap/Table";
+import PersonTableRow from "./PersonTableRow";
 
 export default class PersonList extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      persons: []
+      persons: [],
     };
   }
 
   componentWillMount() {
-    axios.get('http://localhost:4000/persons/')
-      .then(res => {
+    axios
+      .get("http://localhost:4000/persons/")
+      .then((res) => {
         this.setState({
-          persons: res.data
+          persons: res.data,
         });
       })
       .catch((error) => {
         console.log(error);
-      })
+      });
   }
 
   DataTable() {
@@ -30,11 +30,9 @@ export default class PersonList extends Component {
     });
   }
 
-
   render() {
-
     return (
-      <div >
+      <div>
         <h4>Persons List</h4>
         <Table striped bordered hover>
           <thead>
@@ -47,12 +45,9 @@ export default class PersonList extends Component {
               <th>Role Producer</th>
             </tr>
           </thead>
-          <tbody>
-            {this.DataTable()}
-          </tbody>
+          <tbody>{this.DataTable()}</tbody>
         </Table>
-      </div>);
+      </div>
+    );
   }
 }
-
-
