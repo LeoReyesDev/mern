@@ -3,6 +3,7 @@ let mongoose = require("mongoose");
 let cors = require("cors");
 let bodyParser = require("body-parser");
 let dbConfig = require("./database/database");
+
 require("dotenv").config();
 
 // Express Route
@@ -63,17 +64,17 @@ app.use((req, res, next) => {
 
 app.use(function (err, req, res, next) {
   console.error(err.message);
-  if (!err.statusCode) err.statusCode = 500;
+  if (!err.statusCode) err.statusCode = 5000;
   res.status(err.statusCode).send(err.message);
 });
 
 if (process.env.NODE_ENV === "production") {
   // Exprees will serve up production assets
-  app.use(express.static("backend/build"));
+  app.use(express.static("client/build"));
 
   // Express serve up index.html file if it doesn't recognize route
   const path = require("path");
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "backend", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
