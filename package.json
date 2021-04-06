@@ -26,10 +26,7 @@
     "server": "(cd backend && npm run start)",
     "start": "concurrently \"npm run client\" \"npm run server\" ",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "clientinstall": "npm install --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,5 +42,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "15.0.1",
+    "npm":"7.0.3",
+    "yarn":"1.22.10"
+
   }
 }
