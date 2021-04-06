@@ -1,5 +1,6 @@
 {
   "name": "mearn-stack-backend",
+  "homepage": "/",
   "version": "1.0.0",
   "description": "MERN Stack backend",
   "main": "server.js",
