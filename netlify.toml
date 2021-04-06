@@ -10,3 +10,7 @@
   for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
+
+    [dev]
+    command = "npm run start"
+  
