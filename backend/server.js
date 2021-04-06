@@ -68,9 +68,12 @@ app.use(function (err, req, res, next) {
 });
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  // Exprees will serve up production assets
+  app.use(express.static("backend/build"));
+
+  // Express serve up index.html file if it doesn't recognize route
+  const path = require("path");
   app.get("*", (req, res) => {
-    //res.sendFile(path.join("build", "index.html"));
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "backend", "build", "index.html"));
   });
 }
