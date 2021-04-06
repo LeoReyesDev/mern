@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "MERN Stack backend",
   "main": "server.js",
-  "proxy": "http://localhost:5000",
+    "proxy": "http://localhost:5000",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,8 @@
     "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.6.9"
+    "mongoose": "^5.6.9",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
