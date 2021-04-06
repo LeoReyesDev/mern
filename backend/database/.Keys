@@ -1,8 +1,0 @@
-const MONGOLAB_USER = "LeoReyesDev";
-const MONGOLAB_PASSWORD = "Q0vOhFAaEWa5mA2f";
-const MONGOLAB_DOMAIN = "cluster0.47kpx.mongodb.net/moviepersons";
-const MONGOLAB_PARAMS = "retryWrites=true&w=majority";
-
-module.exports = {
-  MONGOLAB_URI: `mongodb+srv://${MONGOLAB_USER}:${MONGOLAB_PASSWORD}@${MONGOLAB_DOMAIN}?${MONGOLAB_PARAMS}`,
-};
