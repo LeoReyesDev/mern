@@ -3,6 +3,7 @@ let mongoose = require("mongoose");
 let cors = require("cors");
 let bodyParser = require("body-parser");
 let dbConfig = require("./database/database");
+require("dotenv").config();
 
 // Express Route
 const personRoute = require("./routes/person.route");
@@ -20,13 +21,13 @@ const movieRoute = require("./routes/movie.route");
 
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(dbConfig.database, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
   })
   .then(
     () => {
       console.log("Database sucessfully connected!");
-      //console.log("CREDENTIALS", myEnv);
+      console.log("CREDENTIALS", process.env.MONGODB_URI);
     },
     (error) => {
       console.log(
