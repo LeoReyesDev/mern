@@ -21,13 +21,13 @@ const movieRoute = require("./routes/movie.route");
 
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect(process.env.MONGOLAB_URI, {
     useNewUrlParser: true,
   })
   .then(
     () => {
       console.log("Database sucessfully connected!");
-      console.log("CREDENTIALS", process.env.MONGODB_URI);
+      console.log("CREDENTIALS", process.env.MONGOLAB_URI);
     },
     (error) => {
       console.log(
